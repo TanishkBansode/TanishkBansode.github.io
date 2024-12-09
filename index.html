@@ -1,98 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>In Progress...</title>
-    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch:400" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body { 
-            display: flex;
-            min-height: 100vh;
-            width: 100%;
-            align-items: center;
-            justify-content: center;
-            background: #131313;
-            color: #fff;
-            font-family: 'Chakra Petch', monospace;
-            padding: 20px;
-            overflow-x: hidden;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Chakra+Petch:400" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        div {
-            font-size: clamp(2rem, 10vw, 96px);
-            letter-spacing: clamp(-3px, -0.7vw, -7px);
-            text-align: center;
-            animation: glitch 1s linear infinite;
-            position: relative;
-            white-space: nowrap;
-        }
+    body {
+      background-color: #131313;
+      color: #fff;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 15px;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
 
-        @keyframes glitch {
-            2%,64% {
-                transform: translate(2px,0) skew(0deg);
-            }
-            4%,60% {
-                transform: translate(-2px,0) skew(0deg);
-            }
-            62% {
-                transform: translate(0,0) skew(5deg); 
-            }
-        }
+    .glitch {
+      font-size: clamp(2rem, 10vw, 96px);
+      letter-spacing: clamp(-3px, -0.7vw, -7px);
+      text-align: center;
+      animation: glitch 1s linear infinite;
+      position: relative;
+      white-space: nowrap;
+      font-family: 'Chakra Petch', monospace;
+      margin-bottom: 30px;
+    }
 
-        div:before,
-        div:after {
-            content: attr(title);
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-        }
+    @keyframes glitch {
+      2%,64% {
+        transform: translate(2px, 0) skew(0deg);
+      }
+      4%,60% {
+        transform: translate(-2px, 0) skew(0deg);
+      }
+      62% {
+        transform: translate(0, 0) skew(5deg);
+      }
+    }
 
-        div:before {
-            animation: glitchTop 1s linear infinite;
-            clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-        }
+    .glitch:before,
+    .glitch:after {
+      content: attr(title);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
 
-        @keyframes glitchTop {
-            2%,64% {
-                transform: translate(2px,-2px);
-            }
-            4%,60% {
-                transform: translate(-2px,2px);
-            }
-            62% {
-                transform: translate(13px,-1px) skew(-13deg); 
-            }
-        }
+    .glitch:before {
+      animation: glitchTop 1s linear infinite;
+      clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    }
 
-        div:after {
-            animation: glitchBotom 1.5s linear infinite;
-            clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-            -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-        }
+    @keyframes glitchTop {
+      2%,64% {
+        transform: translate(2px, -2px);
+      }
+      4%,60% {
+        transform: translate(-2px, 2px);
+      }
+      62% {
+        transform: translate(13px, -1px) skew(-13deg);
+      }
+    }
 
-        @keyframes glitchBotom {     
-            2%,64% {
-                transform: translate(-2px,0);
-            }
-            4%,60% {
-                transform: translate(-2px,0);
-            }
-            62% {
-                transform: translate(-22px,5px) skew(21deg); 
-            }
-        }
-    </style>
+    .glitch:after {
+      animation: glitchBottom 1.5s linear infinite;
+      clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+      -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    }
+
+    @keyframes glitchBottom {
+      2%,64% {
+        transform: translate(-2px, 0);
+      }
+      4%,60% {
+        transform: translate(-2px, 0);
+      }
+      62% {
+        transform: translate(-22px, 5px) skew(21deg);
+      }
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+    }
+
+    h1 {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 15px;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background-color: #333;
+      margin: 20px 0;
+      width: 100%;
+    }
+
+    ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+
+    li {
+      margin: 12px 0;
+      padding: 12px 15px;
+      border-bottom: 1px solid #333;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 1.2rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    li:hover {
+      background-color: #1a1a1a;
+      border-bottom-color: #444;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      width: 100%;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      text-decoration: none;
+      color: #4caf50;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      li {
+        font-size: 1.1rem;
+        padding: 10px 12px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div title="Hi, I am Tanishk!">Hi, I am Tanishk!</div>
+  <div class="glitch" title="Hi, I am Tanishk!">Hi, I am Tanishk!</div>
+  <div class="container">
+    <h1>Writings</h1>
+    <hr>
+    <ol>
+      <li><a href="/writings/writing1.html">Writing 1</a></li>
+      <li><a href="/writings/writing2.html">Writing 2</a></li>
+    </ol>
+  </div>
 </body>
 </html>

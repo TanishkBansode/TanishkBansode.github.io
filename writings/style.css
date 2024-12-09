@@ -1,0 +1,25 @@
+body {
+  background-color: #111;
+  color: #fff;
+  font-family: sans-serif;
+  margin: 40px;
+  line-height: 1.6;
+}
+h1 {
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+.content {
+  margin-bottom: 60px;
+}
+p {
+  margin: 0 0 20px;
+}
+a {
+  color: #4caf50;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+a:hover {
+  text-decoration: underline;
+}
