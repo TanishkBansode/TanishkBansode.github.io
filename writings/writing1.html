@@ -3,14 +3,159 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Writing 1</title>
-  <link rel="stylesheet" href="style.css">
+  <title>The Future of Web Development - Tanishk's Writings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #f5f5f5;
+      --text-color: #333333;
+      --accent-color: #4caf50;
+      --secondary-bg: #ffffff;
+      --border-color: #e0e0e0;
+    }
+
+    .dark-mode {
+      --bg-color: #131313;
+      --text-color: #ffffff;
+      --accent-color: #4caf50;
+      --secondary-bg: #1a1a1a;
+      --border-color: #333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background-color: var(--secondary-bg);
+      padding: 20px 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    main {
+      padding: 40px 0;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .content {
+      background-color: var(--secondary-bg);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .content p {
+      margin-bottom: 20px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: var(--text-color);
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: var(--text-color);
+      font-size: 1.5rem;
+      cursor: pointer;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      transition: color 0.2s;
+    }
+
+    .theme-toggle:hover {
+      color: var(--accent-color);
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Writing 1</h1>
-  <div class="content">
-    <p>This is the content of the first writing.</p>
-  </div>
-  <a href="/index.html">← Back to Writings</a>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="/index.html" class="logo">TK</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1>The Future of Web Development</h1>
+      <div class="content">
+        <p>The landscape of web development is constantly evolving, with new technologies and methodologies emerging at a rapid pace. As we look towards the future, several key trends are shaping the way we build and interact with web applications.</p>
+        
+        <p>One of the most significant developments is the rise of Progressive Web Apps (PWAs). These applications combine the best of web and mobile apps, offering offline functionality, push notifications, and app-like interfaces. As browsers continue to support more native features, the line between web and native applications will continue to blur.</p>
+        
+        <p>Another area of growth is in serverless architectures. By abstracting away server management, developers can focus more on writing code and less on infrastructure. This approach not only simplifies deployment but also offers better scalability and potentially lower costs.</p>
+        
+        <p>We're also seeing a shift towards more immersive web experiences with technologies like WebVR and WebAR. These allow developers to create virtual and augmented reality experiences directly in the browser, opening up new possibilities for interactive content and applications.</p>
+        
+        <p>As we move forward, the emphasis on performance and user experience will only increase. Techniques like code splitting, tree shaking, and advanced caching strategies will become standard practice to ensure fast, responsive web applications.</p>
+        
+        <p>The future of web development is exciting and full of possibilities. As developers, it's crucial to stay adaptable and continue learning to keep up with these evolving trends and technologies.</p>
+      </div>
+      <a href="/index.html" class="back-link">← Back to Writings</a>
+    </div>
+  </main>
+
+  <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
 </body>
 </html>
+
